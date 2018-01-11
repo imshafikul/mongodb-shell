@@ -1,20 +1,20 @@
-# mongodb-shell
+# MongoDB-Shell
 MongoDB Shell command to read, create, delete and update Data
 
 Please read official documentation and installation guide from MongoDB [official site](https://docs.mongodb.com/getting-started/shell/installation/)
 
 ## Show all Database
 ```
-$ show dbs;
+show dbs;
 ```
 
 ## Use a Database
 ```
-$ use {your_database_name}
+use {your_database_name}
 ```
 ## Check Current Database
 ```
-$ db;
+db;
 ```
 
 ## Create new user in a Database
@@ -28,20 +28,20 @@ db.createUser({
 
 ## Create collection [collection is like table in relational database]
 ```
-$ db.createCollection('customers');
+db.createCollection('customers');
 // here db reffer the current database
 ```
 
 ## Check all colections in current Database
 ```
-$ show collections;
+show collections;
 ```
 ## Add / Insert an item into a collection
 ```
 db.customers.insert({first_name: "Shafikul", last_name: "Islam", age: 26});
 ```
 
-## On relational database we can only add define field value , in nosql database it is ok add new key and value 
+## On relational database we can only add defined field value, But in nosql database we can add extra field {Not defined} & value as our wish 
 ```
 db.customers.insert([
     {first_name: "Hridoy", last_name: "Khan", age: 21},
@@ -71,7 +71,7 @@ db.customers.update({first_name: "Hridoy"}, {
   }
 });
 ```
-## use $inc {Increment the existing age value with new value}
+## Use $inc {Increment the existing age value with new value}
 ```
 db.customers.update({first_name: "Hridoy"}, {
   $inc: {
@@ -121,7 +121,7 @@ db.customers.remove({});
 db.customers.find({$or:[{first_name: "Shafikul"},{first_name: "Hridoy"}]});
 ```
 
-## find with greater then & less then & greater then or equal & less then or equal (`$gt` & `$lt` & `$gte` & `$lte`)
+## Find with greater then & less then & greater then or equal & less then or equal (`$gt` & `$lt` & `$gte` & `$lte`)
 ```
 db.customers.find({ age: {$gt: 10} });
 db.customers.find({ age: {$lt: 30} });
