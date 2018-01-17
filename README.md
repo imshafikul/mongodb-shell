@@ -102,7 +102,7 @@ db.customers.update({first_name: "Ethila"}, {
 });
 ```
 
-## Remove an item from an collection
+## Remove an item from a collection
 ```
 db.customers.remove({first_name: "Shafikul"});
 ```
